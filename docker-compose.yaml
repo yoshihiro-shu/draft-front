@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  nuxt:
+    build: ./frontend
+    ports:
+      - 3000:3000
+    volumes:
+      - ./frontend:/app
+    environment:
+      - HOST=0.0.0.0
+      - port=3000
+      - CHOKIDAR_USEPOLLING=true
+      - NODE_OPTIONS=--openssl-legacy-provider
+    tty: true
+    working_dir: /app
+    command: yarn dev
