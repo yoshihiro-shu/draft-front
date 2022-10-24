@@ -1,16 +1,34 @@
-<template>
-  <section class="w-full md:w-2/3 flex flex-col items-center px-3">
-      <Article />
-      <Article />
-      <Article />
-      <Pagination />
-  </section>
-</template>
+declare module TopPage {
 
-<script lang="ts">
-import { AxiosRequestConfig, AxiosResponse, AxiosError } from "axios"
-// import Article from '@/src/api/TopPage.ts'
-import Vue from 'vue'
+  export interface Category {
+      id: number;
+      name: string;
+      description: string;
+      parentId: number;
+      createdAt: Date;
+  }
+
+  export interface Tag {
+    id: number;
+    name: string;
+    description: string;
+    createdAt: Date;
+  }
+
+  export interface Article {
+      id: number;
+      userId: number;
+      title: string;
+      content: string;
+      status: number;
+      createdAt: Date;
+      updatedAt: Date;
+      categoryId: number;
+      Category: Category;
+      Tags: Tag[];
+  }
+
+}
 
 class Category {
   id: number;
@@ -43,7 +61,7 @@ class Tag {
   }
 }
 
-class Article{
+export default class Article{
   id: number;
   userId: number;
   title: string;
@@ -68,39 +86,3 @@ class Article{
     this.Tags = Tags;
   }
 }
-
-class Response {
-  status: number;
-  data: Article[];
-
-  public constructor(status: number, data: Article[]) {
-    this.status = status;
-    this.data = data;
-  }
-}
-
-export default Vue.extend({
-  name: 'IndexPage',
-  mounted() {
-    this.getTopPage()
-  },
-  methods: {
-    getTopPage(){
-      const options: AxiosRequestConfig = {
-        url: "top",
-        method: "GET",
-      };
-
-    this.$axios(options)
-      .then((res: AxiosResponse<Response>) => {
-        const {data, status} = res;
-        console.log("data:", data.data)
-        console.log("status:", status)
-      })
-      .catch((e: AxiosError<{error: string}>) => {
-        console.error(e.message)
-      })
-    }
-  }
-})
-</script>

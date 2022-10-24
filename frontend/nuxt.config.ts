@@ -1,4 +1,7 @@
-export default {
+
+import { NuxtConfig } from '@nuxt/types'
+
+const config: NuxtConfig = {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'frontend',
@@ -52,4 +55,23 @@ export default {
   },
 
   srcDir: 'src/',
+
+  // typescript: {
+  //   typeCheck: {
+  //     eslint: {
+  //       files: './**/*.{ts,vue}',
+  //     },
+  //   },
+  // }
+
+
 }
+
+export default config
+
+// config.module.rules.push({
+//   test: /\.(ts)$/,
+//   loader: "ts-loader",
+//   exclude: /(node_modules)/
+// });
+

@@ -1,0 +1,33 @@
+{
+  "id":1,
+  "userId":1,
+  "title":"test1",
+  "content":"test-content-1",
+  "status":2,
+  "createdAt":"2022-10-15T12:16:09.067608+09:00",
+  "updatedAt":"2022-10-15T12:16:09.067608+09:00",
+  "categoryId":1,
+  "Category":
+    {
+      "id":1,
+      "name":"category-1",
+      "description":"it is test category-1",
+      "parentId":0,
+      "createdAt":"2022-10-15T12:16:09.163302+09:00"
+    },
+  "Tags":
+    [
+      {
+        "id":1,
+        "name":"tag-1",
+        "description":"it is test tag-1",
+        "createdAt":"2022-10-16T17:52:56.708285+09:00"
+      },
+      {
+        "id":2,
+        "name":"tag-2",
+        "description":"it is test tag-2",
+        "createdAt":"2022-10-16T17:52:56.708285+09:00"
+      }
+    ]
+}
