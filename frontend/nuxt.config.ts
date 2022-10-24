@@ -54,24 +54,10 @@ const config: NuxtConfig = {
   build: {
   },
 
-  srcDir: 'src/',
+  srcDir: 'src/'
 
-  // typescript: {
-  //   typeCheck: {
-  //     eslint: {
-  //       files: './**/*.{ts,vue}',
-  //     },
-  //   },
-  // }
 
 
 }
 
 export default config
-
-// config.module.rules.push({
-//   test: /\.(ts)$/,
-//   loader: "ts-loader",
-//   exclude: /(node_modules)/
-// });
-

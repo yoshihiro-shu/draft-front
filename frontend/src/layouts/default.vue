@@ -15,9 +15,9 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-    name: "default",
-    mounted() {
-        console.log("default");
-    },
+  name: 'Default',
+  mounted () {
+    console.log('default')
+  }
 })
 </script>
