@@ -17,16 +17,21 @@
 </template>
 
 <script lang="ts">
-import Vue, { PropOptions }from 'vue'
 import Article from '~/src/api/TopPage/definition'
+import { defineComponent, PropType } from '@nuxtjs/composition-api'
 
-export default Vue.extend({
-  name: 'Article',
-  props: {
-    article: {
-      type: Object,
-      required: false,
-    } as PropOptions<Article>,
+export default defineComponent({
+  props:{
+    article:{
+      type: Object as PropType<Article>,
+      required: true
+    }
   },
+  setup(props) {
+    const article: Article = props.article
+    return {
+      article
+    }
+  }
 })
 </script>
