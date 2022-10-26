@@ -31,6 +31,7 @@ class Tag {
 export default class Article {
   id: number
   userId: number
+  thumbnailUrl: string
   title: string
   content: string
   status: number
@@ -40,9 +41,10 @@ export default class Article {
   Category: Category
   Tags: Tag[]
 
-  public constructor (id: number, userId: number, title: string, content: string, status: number, createdAt: Date, updatedAt: Date, categoryId: number, Category: Category, Tags: Tag[]) {
+  public constructor (id: number, userId: number, thumbnailUrl: string, title: string, content: string, status: number, createdAt: Date, updatedAt: Date, categoryId: number, Category: Category, Tags: Tag[]) {
     this.id = id
     this.userId = userId
+    this.thumbnailUrl = thumbnailUrl
     this.title = title
     this.content = content
     this.status = status
